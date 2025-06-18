@@ -1,0 +1,303 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/* document styles */
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root {
+    font-size: 16px;
+    --font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    --white: #f0f0f0;
+    --yellow: #fac45f;
+    --gray: #cececf;
+    --red: #ff3f3f;
+    --shadow-low: rgba(75, 75, 90, .50);
+    --shadow-high: rgba(75, 75, 90, .75);
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--white);
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* icons */
+.fa-solid {
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    transform: translateY(0);
+}
+
+.fa-solid:hover {
+    transform: translateY(-20%);
+}
+
+.fa-star {
+    color: var(--gray);
+}
+
+.checked {
+    color: var(--yellow);
+}
+
+.fa-heart {
+    color: var(--gray);
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+
+/* header, footer */
+header,
+footer {
+    background-color: var(--yellow);
+    display: flex;
+    width: 100%;
+    padding: 1%;
+}
+
+header img,
+footer img {
+    width: 10%;
+    height: auto;
+    margin-right: 2%;
+}
+
+header span,
+header span:last-child,
+footer span,
+footer span:last-child {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header span:last-child,
+footer span:last-child {
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+header .fa-solid:hover {
+    transform: translateY(-5%);
+}
+
+
+/* main */
+main {
+    width: 100%;
+}
+
+.recipes-section,
+.opinions-section {
+    width: 100%;
+    margin: 5% 0;
+}
+
+.recipes-section header,
+.opinions-section header {
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.recipes-section header span,
+.opinions-section header span {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.recipes-section article,
+.opinions-section article {
+    margin: 7.5% 0;
+}
+
+.recipes-section .recipe,
+.opinions-section .opinion {
+    transition: all 0.25s ease-in-out;
+    transform: translateY(0);
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 var(--shadow-low);
+    display: flex;
+    width: 90%;
+    margin: 5% auto;
+}
+
+.recipes-section .recipe:hover {
+    box-shadow: 0 4px 12px 0 var(--shadow-high);
+    transform: translateY(-2.5%);
+}
+
+.recipes-section .recipe .left,
+.opinions-section .opinion .left {
+    overflow: hidden;
+    width: 30%;
+    height: 100px;
+}
+
+.recipes-section .recipe .left img,
+.opinions-section .opinion .left img {
+    object-fit: cover;
+    border-radius: 5px 0 0 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.recipes-section .recipe .right,
+.opinions-section .opinion .right {
+    position: relative;
+    width: 70%;
+    height: 100px;
+    padding: 2%;
+}
+
+.recipes-section .recipe .right span:first-child,
+.opinions-section .opinion .right span:first-child {
+    font-size: 1.15rem;
+    display: block;
+}
+
+.recipes-section .recipe .right span,
+.opinions-section .opinion .right span {
+    font-size: 0.8rem;
+}
+
+.recipes-section .recipe .right .opinion {
+    margin-right: 2%;
+}
+
+
+/* media */
+@media only screen and (min-width: 600px) {
+    header,
+    footer {
+        padding: .1%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header span,
+    footer span {
+        font-size: 1.25rem;
+    }
+
+    .recipes-section article {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5%;
+        margin: 5%;
+    }
+
+    .recipes-section .recipe {
+        display: block;
+        width: 100%;
+    }
+
+    .recipes-section .recipe .left {
+        width: 100%;
+        height: 200px;
+    }
+
+    .recipes-section .recipe .left img {
+        border-radius: 5px 5px 0 0 ;
+    }
+
+    .recipes-section .recipe .right {
+        text-align: center;
+        width: 100%;
+        height: 75px;
+        padding: 5%;
+    }
+
+    .recipes-section .recipe .right span:first-child {
+        font-size: 0.9rem;
+    }
+
+    .recipes-section .recipe .right span {
+        font-size: 0.75rem;
+    }
+
+    .recipes-section .recipe .right span[class~="fa-heart"] {
+        top: 70%;
+        left: 10%;
+        transform: translate(-50% -50%);
+    }
+
+    .opinions-section .opinion .left {
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    .recipes-section .recipe .right span:first-child {
+        font-size: 1.15rem;
+    }
+
+    .recipes-section .recipe .right span {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    header img,
+    footer img {
+        width: 7.5%;
+    }
+
+    .opinions-section article {
+        margin: 5% 0;
+    }
+
+    .opinions-section .opinion .left, .opinions-section .opinion .right {
+        height: 120px;
+    }
+
+    .opinions-section .opinion {
+        margin: 2.5% auto;
+    }
+
+    .opinions-section .opinion .left {
+        width: 15%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    header img,
+    footer img {
+        width: 5%;
+    }
+
+    header span,
+    footer span {
+        font-size: 1.35rem;
+    }
+
+    .recipes-section,
+    .opinions-section {
+        margin: 2.5% 0;
+    }
+
+    .recipes-section .recipe .right {
+        height: 90px;
+    }
+
+    .recipes-section header span,
+    .opinions-section header span {
+        font-size: 1.75rem;
+    }
+
+    .opinions-section .opinion .left {
+        width: 10%;
+    }
+}
